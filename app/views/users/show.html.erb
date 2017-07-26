@@ -1,2 +1,8 @@
 <h1>Users#show</h1>
-<p><%= @user.id %></p>
+
+
+<% @user.posts.each do |post| %>
+<p><%= post.message %></p>
+<% end %>
+
+<a href="../posts/new">New post</a>
