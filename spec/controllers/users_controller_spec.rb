@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   describe "GET /show " do
     it "responds with 200" do
+      user = User.create(name: 'Tom', email: 'Tom@mail.com', password: 'pass', password_confirmation: 'pass')
+      session[:user_id] = user.id
       get :show
       expect(response).to have_http_status(200)
     end
