@@ -1,2 +1,13 @@
 <h1>Users#show</h1>
+
 <p><%= @user.id %></p>
+
+<%= link_to "New post", new_post_url(:user_id => @user.id) %>
+
+<% if !@user.posts.empty? %>
+<ul>
+  <% @user.posts.each do |post| %>
+ <li>  <%= post.message %> </li>
+  <% end %>
+</ul>
+  <% end %>
