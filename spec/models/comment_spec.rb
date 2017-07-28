@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  #to be used very very soon
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to be }
+  describe Comment.new(comment: "I'm a comment") do
+    it { is_expected.to have_attributes(comment: "I'm a comment") }
+  end
 end
