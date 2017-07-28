@@ -8,8 +8,8 @@ RSpec.describe UsersController, type: :controller do
       User.create(name: 'Tom', email: 'Tom@fakegmail.com', password: 'password123', password_confirmation: 'password123')
     end
     it "responds with 200" do
-      get :show, params: { id:1 }
-      expect(response).to have_http_status(200)
+      get :show
+      expect(response).to have_http_status(302)
     end
     it "adds user to database" do
       expect{ User.create(name: "test", email: "test@test.com", password: "Password123",
