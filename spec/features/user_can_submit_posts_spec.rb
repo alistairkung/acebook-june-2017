@@ -22,11 +22,4 @@ RSpec.feature "Timeline", type: :feature do
     expect('Hello, universe!').to appear_before('Hello, world!')
   end
 
-  #scenario "user sees only their own posts" do
-    sign_up
-    create_post
-    create_post(message: "Hello, universe!")
-    locate(:css, '#post').value
-  end
-
 end
