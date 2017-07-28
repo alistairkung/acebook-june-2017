@@ -6,8 +6,10 @@
 
 <% if !@user.posts.empty? %>
 <ul>
-  <% @user.posts.each do |post| %>
+  <% @user.posts.reverse.each do |post| %>
  <li>  <%= post.message %> </li>
+<li>  <%= post.created_at %> </li>
+    <span id="post"> <% post.user.id %> </span>
   <% end %>
 </ul>
   <% end %>

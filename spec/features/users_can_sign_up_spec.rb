@@ -33,7 +33,7 @@ RSpec.feature "Sign up", type: :feature do
 
   describe "Duplicate details" do
     scenario "Email address must be unique" do
-      sign_up
+      @user = User.create(name: 'Tom', email: 'Tom@fakegmail.com', password: 'password123', password_confirmation: 'password123')
       expect { sign_up }.to_not change(User, :count)
     end
   end
