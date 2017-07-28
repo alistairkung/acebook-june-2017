@@ -1,6 +1,6 @@
 
 def create_post(message: "Hello, world!")
-  visit "/posts"
+  visit "/users/1"
   click_link "New post"
   fill_in "Message", with: message
   click_button "Submit"

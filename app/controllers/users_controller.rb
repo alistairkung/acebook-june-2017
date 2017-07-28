@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to posts_url
+      redirect_to @user
     else
       redirect_to new_user_url
     end
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       render 'show'
     else
       redirect_to posts_url
-      # add flash error
     end
   end
 
