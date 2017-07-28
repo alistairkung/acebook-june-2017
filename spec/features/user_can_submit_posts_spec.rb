@@ -22,4 +22,10 @@ RSpec.feature "Timeline", type: :feature do
     expect('Hello, universe!').to appear_before('Hello, world!')
   end
 
+  scenario "posts belong to the user that creates them" do
+    sign_up
+    create_post
+    expect(find(:css, '#user_id').text).to eq("1")
+  end
+
 end

@@ -20,7 +20,6 @@ class UsersController < ApplicationController
       render 'show'
     else
       redirect_to posts_url
-      # add flash error
     end
   end
 
