@@ -1,11 +1,15 @@
 class LikesController < ApplicationController
   def new
+    session[:post_id] = params[:post_id]
+    p session[:post_id]
     @like = Like.new
   end
 
   def create
-    @like = Like.create(like_params)
-    redirect_to post_url
+    @post = Post.find(session[:post_id])
+    @post.likes.create(post_id: session[:post_id])
+    @user = @post.user
+    redirect_to @user
   end
 
   def index
@@ -14,8 +18,8 @@ class LikesController < ApplicationController
 
   private
 
-  def like_params
-    params.require(:like).permit(:post_id)
-  end
+   def like_params
+     params.require(:like).permit(:post_id)
+   end
 
 end

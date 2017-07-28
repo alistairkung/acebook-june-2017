@@ -13,6 +13,7 @@
  <li>  <%= post.message %> </li>
 <li>  <%= post.created_at %> </li>
    <li id="user_id"> <%= post.user.id %> </li>
+  <%= link_to "Like", new_like_url(:post_id => post.id) %> 
   <% end %>
 </ul>
   <% end %>
