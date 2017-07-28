@@ -14,3 +14,8 @@ def sign_up(name: 'Tom', email: 'Tom@fakegmail.com', password: 'password123', pa
   fill_in(:user_password_confirmation, with: password_confirmation)
   click_button('Submit')
 end
+
+def create_comment(comment: "I'm a comment")
+  fill_in(:comment_comment, with: comment)
+  click_button "Submit"
+end
